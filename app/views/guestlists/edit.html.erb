@@ -1,0 +1,7 @@
+<h1>Editing guestlist</h1>
+
+<%= form_for :guestlist, url: guestlist_path(@guestlist), method: :patch do |f| %>
+
+<%= render 'form' %>
+
+<%= link_to 'Back', guestlists_path %>

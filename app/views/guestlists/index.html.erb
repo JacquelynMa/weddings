@@ -1,0 +1,26 @@
+<h1>Listing guestlists</h1>
+
+<%= link_to 'New guestlist', new_guestlist_path %>
+
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Description</th>
+  </tr>
+
+  <% @guestlists.each do |guestlist| %>
+    <tr>
+      <td><%= guestlist.title %></td>
+      <td><%= guestlist.description %></td>
+      <td><%= link_to 'Show', guestlist_path(guestlist) %></td>
+      <td><%= link_to 'Edit', edit_guestlist_path(guestlist) %></td>
+      <td><%= link_to 'Destroy', guestlist_path(guestlist),
+              method: :delete,
+              data: { confirm: 'Are you sure?' } %></td>
+    </tr>
+  <% end %>
+</table>
+
+<%= link_to 'Back', root_path %>
+
+
