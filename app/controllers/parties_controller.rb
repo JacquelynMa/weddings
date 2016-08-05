@@ -21,6 +21,12 @@ class PartiesController < ApplicationController
   def edit
   end
 
+  def add_person
+    if @person
+      @party.people << People.find_by_id(@person.id)
+    end
+  end
+
   # POST /parties
   # POST /parties.json
   def create

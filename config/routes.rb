@@ -1,8 +1,13 @@
 Rails.application.routes.draw do
-  resources :parties
+  resources :widgets
+
+  resources :parties do
+    resources :people
+  end
 
   resources :people
 
+  resource :planning, only: [:create, :new]
   get 'welcome/index'
 
   # The priority is based upon order of creation: first created -> highest priority.

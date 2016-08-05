@@ -6,4 +6,5 @@
 </p>
 
 <%= link_to 'Edit', edit_person_path(@person) %> |
-<%= link_to 'Back', people_path %>
+<%= link_to 'See guests', people_path %> |
+<%= link_to 'Add to Party', new_planning_path(person_id: @person) %>
