@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :users
   resources :widgets
 
   resources :parties do
@@ -7,7 +8,8 @@ Rails.application.routes.draw do
 
   resources :people
 
-  resource :planning, only: [:create, :new]
+  resource :participation, only: [:new, :create]
+
   get 'welcome/index'
 
   # The priority is based upon order of creation: first created -> highest priority.
